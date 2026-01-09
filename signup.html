@@ -64,21 +64,33 @@
 </div>
 
     <!-- STEP 6 -->
-    <div class="step">
-      <h2>Wallet Type </h2>
-      <input type="text" placeholder="Wallet Type (e.g Trust Wallet)" required>
-  <button onclick="prevStep()">Back</button>
+  <div class="step">
+  <h2>Select Wallet Type</h2>
+
+  <select id="walletType" required>
+    <option value="">Choose wallet</option>
+    <option>Ethereum</option>
+    <option>Solana</option>
+    <option>Bitcoin</option>
+    <option>Polygon</option>
+    <option>Avalanche</option>
+    <option>BNB Chain</option>
+    <option>Tron</option>
+  </select>
+
+  <button type="button" onclick="prevStep()">Back</button>
   <button type="submit">Create Account</button>
-  <div class="btn-row">    
 </div>
-  </form>
 
   <p class="switch">
     Already have an account? <a href="login.html">Login</a>
   </p>
 
 </div>
-
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+  <p>Please hold on, your account is being created...</p>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
