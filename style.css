@@ -126,3 +126,25 @@ main h2 {
   flex-direction: column;
   justify-content: center;
 }
+input, button {
+  font-size: 16px;       /* prevents forced zoom */
+}
+
+input {
+  padding: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+.auth-container input {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.auth-container button {
+  font-size: 18px;
+  padding: 14px;
+}
