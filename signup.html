@@ -64,24 +64,26 @@
 </div>
 
     <!-- STEP 6 -->
-  <div class="step">
-  <h2>Select Wallet Type</h2>
+<div class="step">
+  <h3>Select Wallet Type</h3>
 
-  <select id="walletType" required>
-    <option value="">Choose wallet</option>
-    <option>Ethereum</option>
-    <option>Solana</option>
-    <option>Bitcoin</option>
-    <option>Polygon</option>
-    <option>Avalanche</option>
+  <select required>
+    <option value="">-- Choose wallet --</option>
+    <option>MetaMask</option>
+    <option>Trust Wallet</option>
+    <option>Coinbase Wallet</option>
     <option>BNB Chain</option>
-    <option>Tron</option>
+    <option>Solana</option>
+    <option>WalletConnect</option>
   </select>
 
-   <div class="buttons">
-    <button type="button" class="back-btn">Back</button>
+  <div class="buttons">
+    <button type="button" onclick="prevStep()">Back</button>
     <button type="submit">Create Account</button>
-</div>
+  </div>
+</div> 
+
+
 <div id="loadingScreen" style="display:none;">
   <h2>Please hold on</h2>
   <p>Your account is being created...</p>
