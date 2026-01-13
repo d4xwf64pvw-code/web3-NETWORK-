@@ -1,5 +1,7 @@
 let currentStep = 0;
 const steps = document.querySelectorAll(".step");
+const loading = document.getElementById("loading");
+const form = document.getElementById("signupForm");
 
 function showStep(index) {
   steps.forEach(step => step.classList.remove("active"));
@@ -19,17 +21,15 @@ function prevStep() {
     showStep(currentStep);
   }
 }
-document.getElementById("signupForm").addEventListener("submit", function (e) {
+
+form.addEventListener("submit", function (e) {
   e.preventDefault();
+  form.classList.add("hidden");
+  loading.classList.remove("hidden");
 
-  // Hide signup
-  document.getElementById("signupForm").style.display = "none";
-
-  // Show loading
-  document.getElementById("loadingScreen").style.display = "flex";
-
-  // Fake loading before dashboard
   setTimeout(() => {
     window.location.href = "dashboard.html";
   }, 3000);
 });
+
+showStep(currentStep);
