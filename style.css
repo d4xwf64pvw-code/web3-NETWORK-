@@ -74,3 +74,10 @@ body {
   font-size: 14px;
   opacity: 0.8;
 }
+.partner {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #b7f7d2;
+  letter-spacing: 0.5px;
+}
