@@ -1,30 +1,19 @@
-// get elements
-const form = document.getElementById("signupForm");
-const loading = document.getElementById("loading");
+let currentStep = 0;
 const steps = document.querySelectorAll(".step");
 
-// step control
-let currentStep = 0;
-
-// show correct step
-function showStep(stepIndex) {
-  steps.forEach((step, index) => {
-    step.classList.remove("active");
-    if (index === stepIndex) {
-      step.classList.add("active");
-    }
+function showStep(index) {
+  steps.forEach((step, i) => {
+    step.classList.toggle("active", i === index);
   });
 }
 
-// next button
 function nextStep() {
-  if (currentStep < steps.length - 1) {
+  if (currentStep < steps.length - 2) {
     currentStep++;
     showStep(currentStep);
   }
 }
 
-// back button
 function prevStep() {
   if (currentStep > 0) {
     currentStep--;
@@ -32,21 +21,13 @@ function prevStep() {
   }
 }
 
-// show first step on load
-showStep(currentStep);
+function createAccount() {
+  currentStep++;
+  showStep(currentStep);
 
-// submit form
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // hide signup form
-  form.classList.add("hidden");
-
-  // show loading screen
-  loading.classList.remove("hidden");
-
-  // simulate account creation
   setTimeout(() => {
     window.location.href = "dashboard.html";
-  }, 3000);
-});
+  }, 2000);
+}
+
+showStep(currentStep);
