@@ -1,21 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  function animateCrypto(id, min, max, speed) {
-    const el = document.getElementById(id);
-    if (!el) return;
+  const assets = {
+    ethereum: 1230.45,
+    solana: 430.10,
+    polygon: 98.32,
+    bnb: 670.00,
+    avalanche: 120.55
+  };
 
-    let value = Math.floor(Math.random() * (max - min)) + min;
+  function updatePrices() {
+    Object.keys(assets).forEach(asset => {
+      const change = (Math.random() * 100 - 50);
+      assets[asset] += change;
+      if (assets[asset] < 0) assets[asset] = 0;
 
-    setInterval(() => {
-      const change = Math.floor(Math.random() * 50) - 20;
-      value = Math.max(0, value + change);
-      el.textContent = value.toLocaleString();
-    }, speed);
+      const el = document.getElementById(asset);
+      if (el) {
+        el.textContent = "$" + assets[asset].toFixed(2);
+        el.className = change >= 0 ? "green" : "red";
+      }
+    });
   }
 
-  animateCrypto("ethereum", 1200, 60000, 1200);
-  animateCrypto("solana", 300, 25000, 1500);
-  animateCrypto("polygon", 150, 18000, 1700);
-  animateCrypto("bitcoin", 5000, 120000, 1000);
-
+  setInterval(updatePrices, 2000);
 });
