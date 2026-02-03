@@ -3,6 +3,7 @@ const assets = {
   solana: 430.10,
   polygon: 98.32,
   bnb: 670.00
+  btc: 570.45,
 };
 
 function updatePrices() {
