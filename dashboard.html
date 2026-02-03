@@ -2,96 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Web3.Network </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web3 Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1f17, #07130f);
+      color: #fff;
+    }
 
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+    .container {
+      padding: 20px;
+      max-width: 420px;
+      margin: auto;
+    }
+
+    .balance-card {
+      background: linear-gradient(135deg, #0f3d2e, #0b5c3c);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .balance-title {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .balance-amount {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .action-btn {
+      flex: 1;
+      margin: 0 5px;
+      background: #0f3d2e;
+      border-radius: 14px;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .assets {
+      margin-top: 20px;
+    }
+
+    .asset {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0e2a20;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .asset-name {
+      font-size: 14px;
+    }
+
+    .asset-price {
+      font-weight: bold;
+    }
+
+    .green {
+      color: #4cff9a;
+    }
+
+    .red {
+      color: #ff6b6b;
+    }
+  </style>
 </head>
+<body>
 
-<body class="dashboard-body">
+  <div class="container">
 
-  <!-- TOP NAV -->
-  <header class="dashboard-header">
-    <div class="logo">
-      <h2>Web3.Network</h2>
-      <span>(NETWORK)</span>
+    <!-- BALANCE -->
+    <div class="balance-card">
+      <div class="balance-title">Total Balance</div>
+      <div class="balance-amount" id="totalBalance">$12,450.00</div>
     </div>
 
-    <nav class="dashboard-nav">
-      <button>Buy</button>
-      <button>Sell</button>
-      <button>Trade</button>
-      <button>Settings</button>
-      <button id="logoutBtn" class="logout">Logout</button>
-    </nav>
-  </header>
+    <!-- ACTIONS -->
+    <div class="actions">
+      <div class="action-btn">Buy</div>
+      <div class="action-btn">Swap</div>
+      <div class="action-btn">Cash Out</div>
+    </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="dashboard-main">
+    <!-- ASSETS -->
+    <div class="assets">
 
-    <!-- BALANCE CARDS -->
-    <section class="balance-section">
-      <div class="balance-card">
-        <h4>Ethereum (ETH)</h4>
-        <p class="balance" data-balance>+$12,450.23</p>
+      <div class="asset">
+        <div class="asset-name">Ethereum</div>
+        <div class="asset-price green" id="ethereum">$1,230.45</div>
       </div>
 
-      <div class="balance-card">
-        <h4>Solana (SOL)</h4>
-        <p class="balance" data-balance>-$2,310.87</p>
+      <div class="asset">
+        <div class="asset-name">Solana</div>
+        <div class="asset-price red" id="solana">$430.10</div>
       </div>
 
-      <div class="balance-card">
-        <h4>Bitcoin (BTC)</h4>
-        <p class="balance" data-balance>+$45,980.12</p>
+      <div class="asset">
+        <div class="asset-name">Polygon</div>
+        <div class="asset-price green" id="polygon">$98.32</div>
       </div>
 
-      <div class="balance-card">
-        <h4>USDT</h4>
-        <p class="balance" data-balance>+$8,200.00</p>
-      </div>
-    </section>
-
-    <!-- ASSETS TABLE -->
-    <section class="assets-section">
-      <h3>Your Assets</h3>
-
-      <div class="asset-row">
-        <span>Ethereum</span>
-        <span id="ethereum" class="green">$1,230.45</span>
+      <div class="asset">
+        <div class="asset-name">BNB</div>
+        <div class="asset-price green" id="bnb">$670.00</div>
       </div>
 
-      <div class="asset-row">
-        <span>Solana</span>
-        <span id="solana" class="red">$430.10</span>
-      </div>
+    </div>
+  </div>
 
-      <div class="asset-row">
-        <span>Polygon</span>
-        <span id="polygon" class="green">$98.32</span>
-      </div>
-
-      <div class="asset-row">
-        <span>BNB</span>
-        <span id="bnb" class="green">$670.00</span>
-      </div>
-
-      <div class="asset-row">
-        <span>Avalanche</span>
-        <span id="avalanche" class="red">120</span>
-      </div>
-    </section>
-
-    <!-- ACTIVITY -->
-    <section class="activity-section">
-      <h3>Network Activity</h3>
-      <p>Market updating in real-time…</p>
-      <p>Assets syncing securely…</p>
-      <p>Wallet connected successfully.</p>
-    </section>
-
-  </main>
-   <script src="dashboard.js"></script>
+  <!-- JS MUST BE AT BOTTOM -->
+  <script src="dashboard.js"></script>
 </body>
 </html>
